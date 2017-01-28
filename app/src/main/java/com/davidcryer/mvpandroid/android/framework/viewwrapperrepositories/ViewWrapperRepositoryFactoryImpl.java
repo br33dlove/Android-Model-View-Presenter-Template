@@ -1,4 +1,4 @@
-package com.davidcryer.mvpandroid.android.framework.repositories;
+package com.davidcryer.mvpandroid.android.framework.viewwrapperrepositories;
 
 import com.davidcryer.mvpandroid.android.view.factories.ViewWrapperFactory;
 

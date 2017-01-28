@@ -10,7 +10,7 @@ import android.support.v7.widget.Toolbar;
 import com.davidcryer.mvpandroid.R;
 import com.davidcryer.mvpandroid.android.helpers.DrawableHelper;
 import com.davidcryer.mvpandroid.android.helpers.FragmentManagerHelper;
-import com.davidcryer.mvpandroid.android.view.ui.EditAddressFragment;
+import com.davidcryer.mvpandroid.android.view.ui.fragments.EditAddressFragment;
 
 import static com.davidcryer.mvpandroid.android.helpers.FragmentManagerHelper.addFragment;
 import static com.davidcryer.mvpandroid.android.helpers.FragmentManagerHelper.noFragmentBoundToView;

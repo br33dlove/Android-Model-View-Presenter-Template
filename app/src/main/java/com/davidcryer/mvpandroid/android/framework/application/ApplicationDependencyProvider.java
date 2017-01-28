@@ -6,8 +6,8 @@ import com.davidcryer.mvpandroid.platformindependent.presenter.businesslogic.val
 import com.davidcryer.mvpandroid.platformindependent.presenter.businesslogic.validators.ValidationResultFactoryImpl;
 import com.davidcryer.mvpandroid.platformindependent.presenter.factories.PresenterFactory;
 import com.davidcryer.mvpandroid.platformindependent.presenter.factories.PresenterFactoryImpl;
-import com.davidcryer.mvpandroid.android.framework.repositories.ViewWrapperRepositoryFactory;
-import com.davidcryer.mvpandroid.android.framework.repositories.ViewWrapperRepositoryFactoryImpl;
+import com.davidcryer.mvpandroid.android.framework.viewwrapperrepositories.ViewWrapperRepositoryFactory;
+import com.davidcryer.mvpandroid.android.framework.viewwrapperrepositories.ViewWrapperRepositoryFactoryImpl;
 
 class ApplicationDependencyProvider {
 

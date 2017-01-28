@@ -1,16 +1,18 @@
-package com.davidcryer.mvpandroid.android.framework.repositories;
+package com.davidcryer.mvpandroid.android.view.ui.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.View;
 
+import com.davidcryer.mvpandroid.android.framework.viewwrapperrepositories.ViewWrapperRepository;
+import com.davidcryer.mvpandroid.android.framework.viewwrapperrepositories.ViewWrapperRepositoryProvider;
 import com.davidcryer.mvpandroid.platformindependent.javahelpers.CastHelper;
 import com.davidcryer.mvpandroid.android.view.ui.AndroidMvpView;
 
-public abstract class ViewBindingFragment<EventsListenerType extends AndroidMvpView.EventsListener> extends Fragment {
+abstract class ViewBindingFragment<EventsListenerType extends AndroidMvpView.EventsListener> extends Fragment {
     private ViewWrapperRepository viewWrapperRepository;
-    protected EventsListenerType eventsListener;
+    EventsListenerType eventsListener;
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
@@ -31,7 +33,7 @@ public abstract class ViewBindingFragment<EventsListenerType extends AndroidMvpV
         return CastHelper.riskyCastToInterface(getActivity(), ViewWrapperRepositoryProvider.class);
     }
 
-    protected abstract EventsListenerType bind(final ViewWrapperRepository viewWrapperRepository, final Bundle savedState);
+    abstract EventsListenerType bind(final ViewWrapperRepository viewWrapperRepository, final Bundle savedState);
 
     @Override
     public void onDestroyView() {
@@ -39,5 +41,5 @@ public abstract class ViewBindingFragment<EventsListenerType extends AndroidMvpV
         unbind(viewWrapperRepository, !getActivity().isChangingConfigurations());
     }
 
-    protected abstract void unbind(final ViewWrapperRepository viewWrapperRepository, final boolean isLeaving);
+    abstract void unbind(final ViewWrapperRepository viewWrapperRepository, final boolean isLeaving);
 }
