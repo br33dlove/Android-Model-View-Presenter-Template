@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    style="@style/AddressFieldsTheme"
+    android:padding="16dp">
+
+    <com.davidcryer.mvpandroid.android.view.ui.components.CompleteTextInputLayout
+        android:id="@+id/house"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hint="@string/address.hint.house" />
+
+    <com.davidcryer.mvpandroid.android.view.ui.components.CompleteTextInputLayout
+        android:id="@+id/street"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hint="@string/address.hint.street" />
+
+    <com.davidcryer.mvpandroid.android.view.ui.components.CompleteTextInputLayout
+        android:id="@+id/town"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hint="@string/address.hint.town" />
+
+    <com.davidcryer.mvpandroid.android.view.ui.components.CompleteTextInputLayout
+        android:id="@+id/city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hint="@string/address.hint.city" />
+
+    <com.davidcryer.mvpandroid.android.view.ui.components.CompleteTextInputLayout
+        android:id="@+id/postCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hint="@string/address.hint.post_code" />
+
+</LinearLayout>

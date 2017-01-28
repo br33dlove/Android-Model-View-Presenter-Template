@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">mvpandroid</string>
+
+    <string name="address.menu.edit">Edit</string>
+    <string name="address.hint.house">House</string>
+    <string name="address.hint.street">Street</string>
+    <string name="address.hint.town">Town</string>
+    <string name="address.hint.city">City</string>
+    <string name="address.hint.post_code">Post Code</string>
+
+    <string name="edit_address.menu.done">Done</string>
+</resources>
