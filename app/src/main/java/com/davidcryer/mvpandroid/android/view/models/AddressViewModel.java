@@ -5,7 +5,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.Nullable;
 
-import com.davidcryer.mvpandroid.android.activities.EditAddressActivity;
+import com.davidcryer.mvpandroid.android.framework.activities.EditAddressActivity;
 import com.davidcryer.mvpandroid.android.view.ui.AddressAndroidView;
 
 public class AddressViewModel implements AddressAndroidViewModel {

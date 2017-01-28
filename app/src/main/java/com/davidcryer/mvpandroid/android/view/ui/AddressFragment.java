@@ -12,10 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.davidcryer.mvpandroid.android.activities.EditAddressActivity;
 import com.davidcryer.mvpandroid.R;
-import com.davidcryer.mvpandroid.android.presenter.repositories.ViewBindingFragment;
-import com.davidcryer.mvpandroid.android.presenter.repositories.ViewWrapperRepository;
+import com.davidcryer.mvpandroid.android.framework.repositories.ViewBindingFragment;
+import com.davidcryer.mvpandroid.android.framework.repositories.ViewWrapperRepository;
 
 public class AddressFragment extends ViewBindingFragment<AddressAndroidView.EventsListener> implements AddressAndroidView {
     //TODO import and use butterknife instead of initialising view references and setting on click listeners manually

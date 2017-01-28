@@ -1,6 +1,6 @@
-package com.davidcryer.mvpandroid.android.presenter.repositories;
+package com.davidcryer.mvpandroid.android.framework.repositories;
 
-import com.davidcryer.mvpandroid.android.presenter.factories.ViewWrapperFactory;
+import com.davidcryer.mvpandroid.android.view.factories.ViewWrapperFactory;
 
 public class ViewWrapperRepositoryFactoryImpl implements ViewWrapperRepositoryFactory {
     private final ViewWrapperFactory viewWrapperFactory;

@@ -14,8 +14,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.davidcryer.mvpandroid.R;
-import com.davidcryer.mvpandroid.android.presenter.repositories.ViewWrapperRepository;
-import com.davidcryer.mvpandroid.android.presenter.repositories.ViewBindingFragment;
+import com.davidcryer.mvpandroid.android.framework.repositories.ViewWrapperRepository;
+import com.davidcryer.mvpandroid.android.framework.repositories.ViewBindingFragment;
 import com.davidcryer.mvpandroid.android.view.ui.components.CompleteTextInputLayout;
 
 public class EditAddressFragment extends ViewBindingFragment<EditAddressAndroidView.EventsListener> implements EditAddressAndroidView {

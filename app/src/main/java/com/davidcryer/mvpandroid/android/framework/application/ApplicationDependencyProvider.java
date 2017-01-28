@@ -1,13 +1,13 @@
-package com.davidcryer.mvpandroid.android.application;
+package com.davidcryer.mvpandroid.android.framework.application;
 
-import com.davidcryer.mvpandroid.android.presenter.factories.ViewWrapperFactory;
-import com.davidcryer.mvpandroid.android.presenter.factories.ViewWrapperFactoryImpl;
+import com.davidcryer.mvpandroid.android.view.factories.ViewWrapperFactory;
+import com.davidcryer.mvpandroid.android.view.factories.ViewWrapperFactoryImpl;
 import com.davidcryer.mvpandroid.platformindependent.presenter.businesslogic.validators.ValidationResultFactory;
 import com.davidcryer.mvpandroid.platformindependent.presenter.businesslogic.validators.ValidationResultFactoryImpl;
 import com.davidcryer.mvpandroid.platformindependent.presenter.factories.PresenterFactory;
 import com.davidcryer.mvpandroid.platformindependent.presenter.factories.PresenterFactoryImpl;
-import com.davidcryer.mvpandroid.android.presenter.repositories.ViewWrapperRepositoryFactory;
-import com.davidcryer.mvpandroid.android.presenter.repositories.ViewWrapperRepositoryFactoryImpl;
+import com.davidcryer.mvpandroid.android.framework.repositories.ViewWrapperRepositoryFactory;
+import com.davidcryer.mvpandroid.android.framework.repositories.ViewWrapperRepositoryFactoryImpl;
 
 class ApplicationDependencyProvider {
 

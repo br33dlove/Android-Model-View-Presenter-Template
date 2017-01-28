@@ -1,4 +1,4 @@
-package com.davidcryer.mvpandroid.android.presenter.repositories;
+package com.davidcryer.mvpandroid.android.framework.repositories;
 
 import android.os.Bundle;
 

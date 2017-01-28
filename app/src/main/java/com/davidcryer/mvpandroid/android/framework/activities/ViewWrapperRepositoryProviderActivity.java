@@ -1,4 +1,4 @@
-package com.davidcryer.mvpandroid.android.activities;
+package com.davidcryer.mvpandroid.android.framework.activities;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -6,10 +6,10 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 
 import com.davidcryer.mvpandroid.android.helpers.FragmentManagerHelper;
-import com.davidcryer.mvpandroid.android.presenter.repositories.ViewWrapperRepository;
-import com.davidcryer.mvpandroid.android.presenter.repositories.ViewWrapperRepositoryFactory;
-import com.davidcryer.mvpandroid.android.presenter.repositories.ViewWrapperRepositoryFactoryProvider;
-import com.davidcryer.mvpandroid.android.presenter.repositories.ViewWrapperRepositoryProvider;
+import com.davidcryer.mvpandroid.android.framework.repositories.ViewWrapperRepository;
+import com.davidcryer.mvpandroid.android.framework.repositories.ViewWrapperRepositoryFactory;
+import com.davidcryer.mvpandroid.android.framework.repositories.ViewWrapperRepositoryFactoryProvider;
+import com.davidcryer.mvpandroid.android.framework.repositories.ViewWrapperRepositoryProvider;
 import com.davidcryer.mvpandroid.platformindependent.javahelpers.CastHelper;
 
 class ViewWrapperRepositoryProviderActivity extends AppCompatActivity implements ViewWrapperRepositoryProvider {

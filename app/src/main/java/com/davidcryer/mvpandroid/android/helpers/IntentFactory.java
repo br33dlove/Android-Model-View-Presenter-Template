@@ -3,7 +3,7 @@ package com.davidcryer.mvpandroid.android.helpers;
 import android.content.Context;
 import android.content.Intent;
 
-import com.davidcryer.mvpandroid.android.activities.EditAddressActivity;
+import com.davidcryer.mvpandroid.android.framework.activities.EditAddressActivity;
 
 public class IntentFactory {
 

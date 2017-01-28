@@ -1,4 +1,4 @@
-package com.davidcryer.mvpandroid.android.activities;
+package com.davidcryer.mvpandroid.android.framework.activities;
 
 import android.os.Bundle;
 import android.support.annotation.IdRes;

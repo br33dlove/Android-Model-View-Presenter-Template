@@ -1,4 +1,4 @@
-package com.davidcryer.mvpandroid.android.presenter.factories;
+package com.davidcryer.mvpandroid.android.view.factories;
 
 import android.os.Bundle;
 

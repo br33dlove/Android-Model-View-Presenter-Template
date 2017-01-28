@@ -1,11 +1,11 @@
-package com.davidcryer.mvpandroid.android.presenter.repositories;
+package com.davidcryer.mvpandroid.android.framework.repositories;
 
 import android.os.Bundle;
 
 import com.davidcryer.mvpandroid.android.view.ViewWrapper;
 import com.davidcryer.mvpandroid.android.view.ui.AddressAndroidView;
 import com.davidcryer.mvpandroid.android.view.ui.EditAddressAndroidView;
-import com.davidcryer.mvpandroid.android.presenter.factories.ViewWrapperFactory;
+import com.davidcryer.mvpandroid.android.view.factories.ViewWrapperFactory;
 
 class ViewWrapperRepositoryImpl implements ViewWrapperRepository {
     private final ViewWrapperFactory viewWrapperFactory;
