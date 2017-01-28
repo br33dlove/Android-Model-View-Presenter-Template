@@ -9,13 +9,9 @@ import com.davidcryer.mvpandroid.platformindependent.presenter.factories.Present
 import com.davidcryer.mvpandroid.android.presenter.repositories.ViewWrapperRepositoryFactory;
 import com.davidcryer.mvpandroid.android.presenter.repositories.ViewWrapperRepositoryFactoryImpl;
 
-class ApplicationDependencyInjector {
+class ApplicationDependencyProvider {
 
-    static void inject(final MvpApplication application) {
-        application.viewWrapperRepositoryFactory = createPresenterRepositoryFactory();
-    }
-
-    private static ViewWrapperRepositoryFactory createPresenterRepositoryFactory() {
+    static ViewWrapperRepositoryFactory viewWrapperRepositoryFactory() {
         return ViewWrapperRepositoryFactoryImpl.newInstance(createViewStateFactory());
     }
 
