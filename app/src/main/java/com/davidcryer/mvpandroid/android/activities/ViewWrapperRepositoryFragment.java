@@ -1,6 +1,5 @@
 package com.davidcryer.mvpandroid.android.activities;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -10,12 +9,11 @@ import com.davidcryer.mvpandroid.android.presenter.repositories.ViewWrapperRepos
 import com.davidcryer.mvpandroid.android.presenter.repositories.ViewWrapperRepositoryFactory;
 import com.davidcryer.mvpandroid.android.presenter.repositories.ViewWrapperRepositoryFactoryProvider;
 
-@SuppressLint("ValidFragment")//TODO check if valid to have package-private fragment (may cause trouble with FragmentManager?)
-class PresenterRepoFragment extends Fragment {
+class ViewWrapperRepositoryFragment extends Fragment {
     private ViewWrapperRepository viewWrapperRepository;
 
-    public static PresenterRepoFragment newInstance() {
-        return new PresenterRepoFragment();
+    public static ViewWrapperRepositoryFragment newInstance() {
+        return new ViewWrapperRepositoryFragment();
     }
 
     @Override
@@ -26,18 +24,18 @@ class PresenterRepoFragment extends Fragment {
     }
 
     private void initialisePresenterRepository() {
-        viewWrapperRepository = getPresenterRepositoryFactory().create();
+        viewWrapperRepository = viewWrapperRepositoryFactory().create();
     }
 
-    private ViewWrapperRepositoryFactory getPresenterRepositoryFactory() {
-        return getPresenterRepositoryFactoryProvider().providePresenterRepositoryFactory();
+    private ViewWrapperRepositoryFactory viewWrapperRepositoryFactory() {
+        return viewWrapperRepositoryFactoryProvider().viewWrapperRepositoryFactory();
     }
 
-    private ViewWrapperRepositoryFactoryProvider getPresenterRepositoryFactoryProvider() {
+    private ViewWrapperRepositoryFactoryProvider viewWrapperRepositoryFactoryProvider() {
         return CastHelper.riskyCastToInterface(getActivity().getApplication(), ViewWrapperRepositoryFactoryProvider.class);
     }
 
-    ViewWrapperRepository getViewWrapperRepository() {
+    ViewWrapperRepository viewWrapperRepository() {
         return viewWrapperRepository;
     }
 }

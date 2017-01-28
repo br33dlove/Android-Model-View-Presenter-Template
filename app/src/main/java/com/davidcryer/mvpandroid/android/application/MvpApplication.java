@@ -6,16 +6,15 @@ import com.davidcryer.mvpandroid.android.presenter.repositories.ViewWrapperRepos
 import com.davidcryer.mvpandroid.android.presenter.repositories.ViewWrapperRepositoryFactoryProvider;
 
 public class MvpApplication extends Application implements ViewWrapperRepositoryFactoryProvider {
-    ViewWrapperRepositoryFactory viewWrapperRepositoryFactory;
+    private final ViewWrapperRepositoryFactory viewWrapperRepositoryFactory;
 
-    @Override
-    public void onCreate() {
-        super.onCreate();
-        ApplicationDependencyInjector.inject(this);
+    public MvpApplication() {
+        super();
+        viewWrapperRepositoryFactory = ApplicationDependencyProvider.viewWrapperRepositoryFactory();
     }
 
     @Override
-    public ViewWrapperRepositoryFactory providePresenterRepositoryFactory() {
+    public ViewWrapperRepositoryFactory viewWrapperRepositoryFactory() {
         return viewWrapperRepositoryFactory;
     }
 }

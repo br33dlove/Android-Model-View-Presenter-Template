@@ -24,7 +24,7 @@ public abstract class ViewBindingFragment<EventsListenerType extends AndroidMvpV
     }
 
     private ViewWrapperRepository getViewWrapperRepository() {
-        return getPresenterRepositoryProvider().getPresenterRepository();
+        return getPresenterRepositoryProvider().viewWrapperRepository();
     }
 
     private ViewWrapperRepositoryProvider getPresenterRepositoryProvider() {
