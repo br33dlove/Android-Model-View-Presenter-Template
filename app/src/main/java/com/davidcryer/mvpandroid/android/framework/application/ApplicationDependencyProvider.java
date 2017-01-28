@@ -1,7 +1,7 @@
 package com.davidcryer.mvpandroid.android.framework.application;
 
-import com.davidcryer.mvpandroid.android.view.factories.ViewWrapperFactory;
-import com.davidcryer.mvpandroid.android.view.factories.ViewWrapperFactoryImpl;
+import com.davidcryer.mvpandroid.android.view.viewwrapperfactories.ViewWrapperFactory;
+import com.davidcryer.mvpandroid.android.view.viewwrapperfactories.ViewWrapperFactoryImpl;
 import com.davidcryer.mvpandroid.platformindependent.presenter.businesslogic.validators.ValidationResultFactory;
 import com.davidcryer.mvpandroid.platformindependent.presenter.businesslogic.validators.ValidationResultFactoryImpl;
 import com.davidcryer.mvpandroid.platformindependent.presenter.factories.PresenterFactory;

@@ -1,4 +1,4 @@
-package com.davidcryer.mvpandroid.android.view.factories;
+package com.davidcryer.mvpandroid.android.view.viewwrapperfactories;
 
 import android.os.Bundle;
 
