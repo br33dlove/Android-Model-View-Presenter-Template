@@ -4,6 +4,6 @@ import android.os.Parcelable;
 
 import com.davidcryer.mvpandroid.android.view.ui.AndroidMvpView;
 
-public interface AndroidViewModel<ViewType extends AndroidMvpView> extends Parcelable {
+interface AndroidViewModel<ViewType extends AndroidMvpView> extends Parcelable {
     void onto(final ViewType view);
 }
