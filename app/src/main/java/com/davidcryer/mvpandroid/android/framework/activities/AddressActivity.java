@@ -13,7 +13,7 @@ import com.davidcryer.mvpandroid.android.view.ui.fragments.AddressFragment;
 import static com.davidcryer.mvpandroid.android.helpers.FragmentManagerHelper.addFragment;
 import static com.davidcryer.mvpandroid.android.helpers.FragmentManagerHelper.noFragmentBoundToView;
 
-public class AddressActivity extends ViewWrapperRepositoryProviderActivity {
+public class AddressActivity extends ViewWrapperRepositoryActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

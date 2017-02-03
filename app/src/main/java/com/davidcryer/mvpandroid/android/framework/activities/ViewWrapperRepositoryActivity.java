@@ -12,7 +12,7 @@ import com.davidcryer.mvpandroid.android.framework.viewwrapperrepositories.ViewW
 import com.davidcryer.mvpandroid.android.framework.viewwrapperrepositories.ViewWrapperRepositoryProvider;
 import com.davidcryer.mvpandroid.platformindependent.javahelpers.CastHelper;
 
-class ViewWrapperRepositoryProviderActivity extends AppCompatActivity implements ViewWrapperRepositoryProvider {
+class ViewWrapperRepositoryActivity extends AppCompatActivity implements ViewWrapperRepositoryProvider {
     private final static String FRAGMENT_TAG_VIEW_WRAPPER_REPOSITORY = "view wrapper repository";
     private ViewWrapperRepositoryFragment viewWrapperRepositoryFragment;
 

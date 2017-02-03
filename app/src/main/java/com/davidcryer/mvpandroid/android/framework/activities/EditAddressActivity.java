@@ -15,7 +15,7 @@ import com.davidcryer.mvpandroid.android.view.ui.fragments.EditAddressFragment;
 import static com.davidcryer.mvpandroid.android.helpers.FragmentManagerHelper.addFragment;
 import static com.davidcryer.mvpandroid.android.helpers.FragmentManagerHelper.noFragmentBoundToView;
 
-public class EditAddressActivity extends ViewWrapperRepositoryProviderActivity {
+public class EditAddressActivity extends ViewWrapperRepositoryActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
