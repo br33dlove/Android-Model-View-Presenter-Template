@@ -8,8 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.davidcryer.mvpandroid.android.helpers.FragmentManagerHelper;
 import com.davidcryer.mvpandroid.android.framework.viewwrapperrepositories.ViewWrapperRepository;
 import com.davidcryer.mvpandroid.android.framework.viewwrapperrepositories.ViewWrapperRepositoryFactory;
-import com.davidcryer.mvpandroid.android.framework.viewwrapperrepositories.ViewWrapperRepositoryFactoryProvider;
-import com.davidcryer.mvpandroid.android.framework.viewwrapperrepositories.ViewWrapperRepositoryProvider;
+import com.davidcryer.mvpandroid.android.framework.application.ViewWrapperRepositoryFactoryProvider;
 import com.davidcryer.mvpandroid.platformindependent.javahelpers.CastHelper;
 
 class ViewWrapperRepositoryActivity extends AppCompatActivity implements ViewWrapperRepositoryProvider {

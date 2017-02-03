@@ -6,7 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.View;
 
 import com.davidcryer.mvpandroid.android.framework.viewwrapperrepositories.ViewWrapperRepository;
-import com.davidcryer.mvpandroid.android.framework.viewwrapperrepositories.ViewWrapperRepositoryProvider;
+import com.davidcryer.mvpandroid.android.framework.activities.ViewWrapperRepositoryProvider;
 import com.davidcryer.mvpandroid.platformindependent.javahelpers.CastHelper;
 import com.davidcryer.mvpandroid.android.view.ui.AndroidMvpView;
 
