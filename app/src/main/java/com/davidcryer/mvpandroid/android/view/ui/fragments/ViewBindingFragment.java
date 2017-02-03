@@ -17,19 +17,19 @@ abstract class ViewBindingFragment<EventsListenerType extends AndroidMvpView.Eve
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        initialisePresenterRepository();
+        initialiseViewWrapperRepositoryReference();
         eventsListener = bind(viewWrapperRepository, savedInstanceState);
     }
 
-    private void initialisePresenterRepository() {
+    private void initialiseViewWrapperRepositoryReference() {
         viewWrapperRepository = getViewWrapperRepository();
     }
 
     private ViewWrapperRepository getViewWrapperRepository() {
-        return getPresenterRepositoryProvider().viewWrapperRepository();
+        return getViewWrapperRepositoryProvider().viewWrapperRepository();
     }
 
-    private ViewWrapperRepositoryProvider getPresenterRepositoryProvider() {
+    private ViewWrapperRepositoryProvider getViewWrapperRepositoryProvider() {
         return CastHelper.riskyCastToInterface(getActivity(), ViewWrapperRepositoryProvider.class);
     }
 
