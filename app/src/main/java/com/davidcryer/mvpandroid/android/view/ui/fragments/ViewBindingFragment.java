@@ -5,10 +5,10 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.View;
 
-import com.davidcryer.mvpandroid.android.framework.viewwrapperrepositories.ViewWrapperRepository;
 import com.davidcryer.mvpandroid.android.framework.activities.ViewWrapperRepositoryProvider;
-import com.davidcryer.mvpandroid.platformindependent.javahelpers.CastHelper;
+import com.davidcryer.mvpandroid.android.framework.viewwrapperrepositories.ViewWrapperRepository;
 import com.davidcryer.mvpandroid.android.view.ui.AndroidMvpView;
+import com.davidcryer.mvpandroid.platformindependent.javahelpers.CastHelper;
 
 abstract class ViewBindingFragment<EventsListenerType extends AndroidMvpView.EventsListener> extends Fragment {
     private ViewWrapperRepository viewWrapperRepository;
@@ -38,7 +38,7 @@ abstract class ViewBindingFragment<EventsListenerType extends AndroidMvpView.Eve
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        unbind(viewWrapperRepository, !getActivity().isChangingConfigurations());
+        unbind(viewWrapperRepository, getActivity().isChangingConfigurations());
     }
 
     abstract void unbind(final ViewWrapperRepository viewWrapperRepository, final boolean isLeaving);

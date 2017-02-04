@@ -9,9 +9,7 @@ public class TemplatePresenter extends Presenter<TemplateView.EventsListener> {
         this.viewWrapper = viewWrapper;
     }
 
-    public static Presenter<TemplateView.EventsListener> newInstance(
-            final TemplateView viewWrapper
-    ) {
+    public static Presenter<TemplateView.EventsListener> newInstance(final TemplateView viewWrapper) {
         return new TemplatePresenter(viewWrapper);
     }
 
@@ -23,11 +21,11 @@ public class TemplatePresenter extends Presenter<TemplateView.EventsListener> {
             public void someEvent() {
                 viewWrapper.someScreenChange();
             }
+
+            @Override
+            public void onReleaseResources() {
+
+            }
         };
-    }
-
-    @Override
-    public void releaseResources() {
-
     }
 }

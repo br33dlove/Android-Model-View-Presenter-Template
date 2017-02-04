@@ -28,10 +28,11 @@ class ViewWrapperRepositoryImpl implements ViewWrapperRepository {
     }
 
     @Override
-    public void unbind(TemplateAndroidView view, boolean isLeaving) {//TODO boolean needs changing - three options: config change, non-config change, view finished
+    public void unbind(TemplateAndroidView view, boolean isConfigChange) {
         if (templateViewWrapper != null) {
             templateViewWrapper.unregister();
-            if (isLeaving) {
+            if (!isConfigChange) {
+                templateViewWrapper.releaseResources();
                 templateViewWrapper = null;
             }
         }

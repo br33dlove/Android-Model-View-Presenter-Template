@@ -55,13 +55,19 @@ public class TemplateFragment extends ViewBindingFragment<TemplateAndroidView.Ev
     }
 
     @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        eventsListener.onSaveInstance(outState);
+    }
+
+    @Override
     protected TemplateAndroidView.EventsListener bind(ViewWrapperRepository viewWrapperRepository, final Bundle savedState) {
         return viewWrapperRepository.bind(this, savedState);
     }
 
     @Override
-    protected void unbind(ViewWrapperRepository viewWrapperRepository, boolean isLeaving) {
-        viewWrapperRepository.unbind(this, isLeaving);
+    protected void unbind(ViewWrapperRepository viewWrapperRepository, boolean isConfigChange) {
+        viewWrapperRepository.unbind(this, isConfigChange);
     }
 
     @Override

@@ -15,7 +15,7 @@ public class TemplateViewWrapper extends ViewWrapper<TemplateAndroidView, Templa
     private final TemplateView.EventsListener wrapperEventsListener;
 
     private TemplateViewWrapper(final PresenterFactory presenterFactory, final TemplateAndroidViewModel viewModel) {
-        wrapperEventsListener = presenterFactory.createAddressPresenter(viewWrapper).eventsListener();
+        wrapperEventsListener = presenterFactory.createAddressPresenter(viewWrapper()).eventsListener();
         this.viewModel = viewModel;
     }
 
@@ -35,22 +35,19 @@ public class TemplateViewWrapper extends ViewWrapper<TemplateAndroidView, Templa
         return new TemplateViewWrapper(presenterFactory, viewModel == null ? viewModelFactory.create() : viewModel);
     }
 
-    private final TemplateView viewWrapper = new TemplateView() {
+    private TemplateView viewWrapper() {
+        return new TemplateView() {
 
-        @Override
-        public void someScreenChange() {
-            viewModel.screenChanged(view());
-        }
+            @Override
+            public void someScreenChange() {
+                viewModel.screenChanged(view());
+            }
 
-        @Override
-        public TemplateMvpViewModel viewModel() {
-            return viewModel;
-        }
-    };
-
-    @Override
-    protected void showCurrentState(final TemplateAndroidView view) {
-        viewModel.onto(view);
+            @Override
+            public TemplateMvpViewModel viewModel() {
+                return viewModel;
+            }
+        };
     }
 
     @Override
@@ -61,11 +58,21 @@ public class TemplateViewWrapper extends ViewWrapper<TemplateAndroidView, Templa
             public void someEvent() {
                 wrapperEventsListener.someEvent();
             }
+
+            @Override
+            public void onSaveInstance(final Bundle outState) {
+                outState.putParcelable(ARG_VIEW_MODEL, viewModel);
+            }
         };
     }
 
     @Override
-    public void saveInstance(final Bundle outState) {
-        outState.putParcelable(ARG_VIEW_MODEL, viewModel);
+    protected void showCurrentState(final TemplateAndroidView view) {
+        viewModel.onto(view);
+    }
+
+    @Override
+    public void releaseResources() {
+        wrapperEventsListener.onReleaseResources();
     }
 }
