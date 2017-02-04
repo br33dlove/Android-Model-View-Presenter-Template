@@ -8,7 +8,7 @@ import com.davidcryer.mvpandroid.android.view.viewwrapperfactories.ViewWrapperFa
 
 class ViewWrapperRepositoryImpl implements ViewWrapperRepository {
     private final ViewWrapperFactory viewWrapperFactory;
-    private ViewWrapper<TemplateAndroidView, TemplateAndroidView.EventsListener> addressViewWrapper;
+    private ViewWrapper<TemplateAndroidView, TemplateAndroidView.EventsListener> templateViewWrapper;
 
     private ViewWrapperRepositoryImpl(final ViewWrapperFactory viewWrapperFactory) {
         this.viewWrapperFactory = viewWrapperFactory;
@@ -20,19 +20,19 @@ class ViewWrapperRepositoryImpl implements ViewWrapperRepository {
 
     @Override
     public TemplateAndroidView.EventsListener bind(TemplateAndroidView view, Bundle savedState) {
-        if (addressViewWrapper == null) {
-            addressViewWrapper = savedState == null ? viewWrapperFactory.createAddressViewWrapper() : viewWrapperFactory.createAddressViewWrapper(savedState);
+        if (templateViewWrapper == null) {
+            templateViewWrapper = savedState == null ? viewWrapperFactory.createTemplateViewWrapper() : viewWrapperFactory.createTemplateViewWrapper(savedState);
         }
-        addressViewWrapper.register(view);
-        return addressViewWrapper.viewEventsListener();
+        templateViewWrapper.register(view);
+        return templateViewWrapper.viewEventsListener();
     }
 
     @Override
     public void unbind(TemplateAndroidView view, boolean isLeaving) {//TODO boolean needs changing - three options: config change, non-config change, view finished
-        if (addressViewWrapper != null) {
-            addressViewWrapper.unregister();
+        if (templateViewWrapper != null) {
+            templateViewWrapper.unregister();
             if (isLeaving) {
-                addressViewWrapper = null;
+                templateViewWrapper = null;
             }
         }
     }

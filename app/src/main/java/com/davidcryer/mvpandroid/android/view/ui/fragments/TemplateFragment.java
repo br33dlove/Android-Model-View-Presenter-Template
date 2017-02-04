@@ -50,6 +50,11 @@ public class TemplateFragment extends ViewBindingFragment<TemplateAndroidView.Ev
     }
 
     @Override
+    public void someScreenChange() {
+        //TODO update UI
+    }
+
+    @Override
     protected TemplateAndroidView.EventsListener bind(ViewWrapperRepository viewWrapperRepository, final Bundle savedState) {
         return viewWrapperRepository.bind(this, savedState);
     }

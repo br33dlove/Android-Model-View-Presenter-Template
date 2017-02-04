@@ -6,17 +6,18 @@ import android.os.Parcelable;
 import com.davidcryer.mvpandroid.android.view.ui.TemplateAndroidView;
 
 public class TemplateViewModel implements TemplateAndroidViewModel {
+    private boolean screenChanged;
 
-    private TemplateViewModel() {
-
+    private TemplateViewModel(final boolean screenChanged) {
+        this.screenChanged = screenChanged;
     }
 
     private TemplateViewModel(final Parcel parcel) {
-
+        screenChanged = parcel.readByte() != 0;
     }
 
-    public static TemplateViewModel newInstance() {
-        return new TemplateViewModel();
+    public static TemplateViewModel newInstance(final boolean screenChanged) {
+        return new TemplateViewModel(screenChanged);
     }
 
     @Override
@@ -26,7 +27,7 @@ public class TemplateViewModel implements TemplateAndroidViewModel {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-
+        dest.writeByte((byte) (screenChanged ? 1 : 0));
     }
 
     final static Parcelable.Creator<TemplateViewModel> CREATOR = new Parcelable.Creator<TemplateViewModel>() {
@@ -42,7 +43,17 @@ public class TemplateViewModel implements TemplateAndroidViewModel {
     };
 
     @Override
-    public void onto(TemplateAndroidView view) {
+    public void screenChanged(TemplateAndroidView view) {
+        screenChanged = true;
+        if (view != null) {
+            view.someScreenChange();
+        }
+    }
 
+    @Override
+    public void onto(TemplateAndroidView view) {
+        if (screenChanged) {
+            view.someScreenChange();
+        }
     }
 }

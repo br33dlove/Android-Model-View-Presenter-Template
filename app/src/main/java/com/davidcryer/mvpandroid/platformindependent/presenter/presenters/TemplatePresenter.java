@@ -19,6 +19,10 @@ public class TemplatePresenter extends Presenter<TemplateView.EventsListener> {
     public TemplateView.EventsListener eventsListener() {
         return new TemplateView.EventsListener() {
 
+            @Override
+            public void someEvent() {
+                viewWrapper.someScreenChange();
+            }
         };
     }
 
