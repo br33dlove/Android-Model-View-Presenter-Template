@@ -23,6 +23,7 @@ public class TemplateViewWrapper extends ViewWrapper<TemplateAndroidView, Templa
             final PresenterFactory presenterFactory,
             final TemplateAndroidViewModelFactory viewModelFactory
     ) {
+        android.util.Log.v(TemplateViewWrapper.class.getSimpleName(), "newInstance");
         return new TemplateViewWrapper(presenterFactory, viewModelFactory.create());
     }
 
@@ -32,6 +33,7 @@ public class TemplateViewWrapper extends ViewWrapper<TemplateAndroidView, Templa
             final TemplateAndroidViewModelFactory viewModelFactory
     ) {
         final TemplateAndroidViewModel viewModel = savedState.getParcelable(ARG_VIEW_MODEL);
+        android.util.Log.v(TemplateViewWrapper.class.getSimpleName(), "retrieveInstanceOrGetNew: " + ((viewModel == null) ? "get new" : "retrieve"));
         return new TemplateViewWrapper(presenterFactory, viewModel == null ? viewModelFactory.create() : viewModel);
     }
 
@@ -40,6 +42,7 @@ public class TemplateViewWrapper extends ViewWrapper<TemplateAndroidView, Templa
 
             @Override
             public void someScreenChange() {
+                android.util.Log.v(TemplateViewWrapper.class.getSimpleName(), "someScreenChange");
                 viewModel.screenChanged(view());
             }
 
@@ -70,11 +73,13 @@ public class TemplateViewWrapper extends ViewWrapper<TemplateAndroidView, Templa
 
     @Override
     protected void showCurrentState(final TemplateAndroidView view) {
+        android.util.Log.v(TemplateViewWrapper.class.getSimpleName(), "showCurrentState");
         viewModel.onto(view);
     }
 
     @Override
     public void releaseResources() {
+        android.util.Log.v(TemplateViewWrapper.class.getSimpleName(), "releaseResources");
         wrapperEventsListener.onReleaseResources();
     }
 }

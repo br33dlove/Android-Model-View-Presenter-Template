@@ -20,7 +20,7 @@ public class TemplateActivity extends ViewWrapperRepositoryActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_app_bar_with_content);
         setupToolbar();
-        addAddressFragment();
+        addTemplateFragment();
     }
 
     private void setupToolbar() {
@@ -32,15 +32,15 @@ public class TemplateActivity extends ViewWrapperRepositoryActivity {
         }
     }
 
-    private void addAddressFragment() {
+    private void addTemplateFragment() {
         final FragmentManager fragmentManager = getSupportFragmentManager();
-        if (noFragmentBoundToView(fragmentManager, getAddressFragmentViewContainer())) {
-            addFragment(fragmentManager, TemplateFragment.newInstance(), getAddressFragmentViewContainer());
+        if (noFragmentBoundToView(fragmentManager, getTemplateFragmentViewContainer())) {
+            addFragment(fragmentManager, TemplateFragment.newInstance(), getTemplateFragmentViewContainer());
         }
     }
 
     @IdRes
-    private int getAddressFragmentViewContainer() {
+    private int getTemplateFragmentViewContainer() {
         return R.id.content;
     }
 

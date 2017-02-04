@@ -51,22 +51,25 @@ public class TemplateFragment extends ViewBindingFragment<TemplateAndroidView.Ev
 
     @Override
     public void someScreenChange() {
-        //TODO update UI
+        android.util.Log.v(TemplateFragment.class.getSimpleName(), "someScreenChange");
     }
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
+        android.util.Log.v(TemplateFragment.class.getSimpleName(), "onSaveInstanceState");
         eventsListener.onSaveInstance(outState);
     }
 
     @Override
     protected TemplateAndroidView.EventsListener bind(ViewWrapperRepository viewWrapperRepository, final Bundle savedState) {
+        android.util.Log.v(TemplateFragment.class.getSimpleName(), "bind");
         return viewWrapperRepository.bind(this, savedState);
     }
 
     @Override
     protected void unbind(ViewWrapperRepository viewWrapperRepository, boolean isConfigChange) {
+        android.util.Log.v(TemplateFragment.class.getSimpleName(), "unbind, isConfigChange : " + (isConfigChange ? "true" : "false"));
         viewWrapperRepository.unbind(this, isConfigChange);
     }
 

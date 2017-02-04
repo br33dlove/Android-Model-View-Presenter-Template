@@ -20,6 +20,7 @@ class ViewWrapperRepositoryImpl implements ViewWrapperRepository {
 
     @Override
     public TemplateAndroidView.EventsListener bind(TemplateAndroidView view, Bundle savedState) {
+        android.util.Log.v(ViewWrapperRepositoryImpl.class.getSimpleName(), "bind, savedState is null: " + (savedState == null ? "true" : "false"));
         if (templateViewWrapper == null) {
             templateViewWrapper = savedState == null ? viewWrapperFactory.createTemplateViewWrapper() : viewWrapperFactory.createTemplateViewWrapper(savedState);
         }
@@ -29,6 +30,7 @@ class ViewWrapperRepositoryImpl implements ViewWrapperRepository {
 
     @Override
     public void unbind(TemplateAndroidView view, boolean isConfigChange) {
+        android.util.Log.v(ViewWrapperRepositoryImpl.class.getSimpleName(), "unbind, isConfigChange: " + (isConfigChange ? "true" : "false"));
         if (templateViewWrapper != null) {
             templateViewWrapper.unregister();
             if (!isConfigChange) {

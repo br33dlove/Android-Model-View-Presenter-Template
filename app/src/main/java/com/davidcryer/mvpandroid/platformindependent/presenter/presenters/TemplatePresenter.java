@@ -19,12 +19,13 @@ public class TemplatePresenter extends Presenter<TemplateView.EventsListener> {
 
             @Override
             public void onSomeEvent() {
+                android.util.Log.v(TemplatePresenter.class.getSimpleName(), "onSomeEvent");
                 viewWrapper.someScreenChange();
             }
 
             @Override
             public void onReleaseResources() {
-
+                android.util.Log.v(TemplatePresenter.class.getSimpleName(), "onReleaseResources");
             }
         };
     }

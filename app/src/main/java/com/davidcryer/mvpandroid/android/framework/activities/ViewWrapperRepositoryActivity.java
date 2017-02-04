@@ -5,10 +5,10 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 
-import com.davidcryer.mvpandroid.android.helpers.FragmentManagerHelper;
+import com.davidcryer.mvpandroid.android.framework.application.ViewWrapperRepositoryFactoryProvider;
 import com.davidcryer.mvpandroid.android.framework.viewwrapperrepositories.ViewWrapperRepository;
 import com.davidcryer.mvpandroid.android.framework.viewwrapperrepositories.ViewWrapperRepositoryFactory;
-import com.davidcryer.mvpandroid.android.framework.application.ViewWrapperRepositoryFactoryProvider;
+import com.davidcryer.mvpandroid.android.helpers.FragmentManagerHelper;
 import com.davidcryer.mvpandroid.platformindependent.javahelpers.CastHelper;
 
 class ViewWrapperRepositoryActivity extends AppCompatActivity implements ViewWrapperRepositoryProvider {
@@ -18,10 +18,11 @@ class ViewWrapperRepositoryActivity extends AppCompatActivity implements ViewWra
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initialisePresenterRepoFragment();
+        initialiseViewWrapperRepositoryFragment();
     }
 
-    private void initialisePresenterRepoFragment() {
+    private void initialiseViewWrapperRepositoryFragment() {
+        android.util.Log.v(ViewWrapperRepositoryActivity.class.getSimpleName(), "initialiseViewWrapperRepositoryFragment");
         viewWrapperRepositoryFragment = (ViewWrapperRepositoryFragment) getSupportFragmentManager().findFragmentByTag(FRAGMENT_TAG_VIEW_WRAPPER_REPOSITORY);
         if (viewWrapperRepositoryFragment == null) {
             viewWrapperRepositoryFragment = ViewWrapperRepositoryFragment.newInstance();
@@ -34,7 +35,7 @@ class ViewWrapperRepositoryActivity extends AppCompatActivity implements ViewWra
         return viewWrapperRepositoryFragment.viewWrapperRepository();
     }
 
-    static class ViewWrapperRepositoryFragment extends Fragment {
+    public static class ViewWrapperRepositoryFragment extends Fragment {
         private ViewWrapperRepository viewWrapperRepository;
 
         public static ViewWrapperRepositoryFragment newInstance() {
@@ -45,10 +46,11 @@ class ViewWrapperRepositoryActivity extends AppCompatActivity implements ViewWra
         public void onCreate(@Nullable Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setRetainInstance(true);
-            initialisePresenterRepository();
+            initialiseViewWrapperRepository();
         }
 
-        private void initialisePresenterRepository() {
+        private void initialiseViewWrapperRepository() {
+            android.util.Log.v(ViewWrapperRepositoryActivity.class.getSimpleName(), "initialiseViewWrapperRepository");
             viewWrapperRepository = viewWrapperRepositoryFactory().create();
         }
 
