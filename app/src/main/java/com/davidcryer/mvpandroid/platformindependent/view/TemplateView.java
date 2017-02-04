@@ -6,6 +6,6 @@ public interface TemplateView extends MvpView<TemplateMvpViewModel> {
     void someScreenChange();
 
     interface EventsListener extends MvpView.EventsListener {
-        void someEvent();
+        void onSomeEvent();
     }
 }

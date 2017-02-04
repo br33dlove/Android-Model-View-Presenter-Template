@@ -55,12 +55,14 @@ public class TemplateViewWrapper extends ViewWrapper<TemplateAndroidView, Templa
         return new TemplateAndroidView.EventsListener() {
 
             @Override
-            public void someEvent() {
-                wrapperEventsListener.someEvent();
+            public void onSomeEvent() {
+                android.util.Log.v(TemplateViewWrapper.class.getSimpleName(), "onSomeEvent");
+                wrapperEventsListener.onSomeEvent();
             }
 
             @Override
             public void onSaveInstance(final Bundle outState) {
+                android.util.Log.v(TemplateViewWrapper.class.getSimpleName(), "onSaveInstance");
                 outState.putParcelable(ARG_VIEW_MODEL, viewModel);
             }
         };
