@@ -2,12 +2,10 @@ package com.davidcryer.mvpandroid.android.view.viewwrapperfactories;
 
 import android.os.Bundle;
 
+import com.davidcryer.mvpandroid.android.view.TemplateViewWrapper;
 import com.davidcryer.mvpandroid.android.view.ViewWrapper;
-import com.davidcryer.mvpandroid.android.view.AddressViewWrapper;
-import com.davidcryer.mvpandroid.android.view.ui.AddressAndroidView;
-import com.davidcryer.mvpandroid.android.view.ui.EditAddressAndroidView;
+import com.davidcryer.mvpandroid.android.view.ui.TemplateAndroidView;
 import com.davidcryer.mvpandroid.platformindependent.presenter.factories.PresenterFactory;
-import com.davidcryer.mvpandroid.android.view.EditAddressViewWrapper;
 
 public class ViewWrapperFactoryImpl implements ViewWrapperFactory {
     private final PresenterFactory presenterFactory;
@@ -21,22 +19,12 @@ public class ViewWrapperFactoryImpl implements ViewWrapperFactory {
     }
 
     @Override
-    public ViewWrapper<AddressAndroidView, AddressAndroidView.EventsListener> createAddressViewWrapper() {
-        return AddressViewWrapper.newInstance(presenterFactory);
+    public ViewWrapper<TemplateAndroidView, TemplateAndroidView.EventsListener> createAddressViewWrapper() {
+        return TemplateViewWrapper.newInstance(presenterFactory);
     }
 
     @Override
-    public ViewWrapper<AddressAndroidView, AddressAndroidView.EventsListener> createAddressViewWrapper(Bundle savedState) {
-        return AddressViewWrapper.retrieveInstanceOrGetNew(savedState, presenterFactory);
-    }
-
-    @Override
-    public ViewWrapper<EditAddressAndroidView, EditAddressAndroidView.EventsListener> createEditAddressViewWrapper() {
-        return EditAddressViewWrapper.newInstance(presenterFactory);
-    }
-
-    @Override
-    public ViewWrapper<EditAddressAndroidView, EditAddressAndroidView.EventsListener> createEditAddressViewWrapper(Bundle savedState) {
-        return EditAddressViewWrapper.retrieveInstanceOrGetNew(savedState, presenterFactory);
+    public ViewWrapper<TemplateAndroidView, TemplateAndroidView.EventsListener> createAddressViewWrapper(Bundle savedState) {
+        return TemplateViewWrapper.retrieveInstanceOrGetNew(savedState, presenterFactory);
     }
 }

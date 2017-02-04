@@ -1,5 +1,5 @@
 package com.davidcryer.mvpandroid.platformindependent.view.models;
 
-public interface AddressMvpViewModel extends MvpViewModel {
+public interface TemplateMvpViewModel extends MvpViewModel {
 
 }

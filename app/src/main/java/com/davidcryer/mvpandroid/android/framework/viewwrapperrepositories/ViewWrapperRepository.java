@@ -2,12 +2,9 @@ package com.davidcryer.mvpandroid.android.framework.viewwrapperrepositories;
 
 import android.os.Bundle;
 
-import com.davidcryer.mvpandroid.android.view.ui.AddressAndroidView;
-import com.davidcryer.mvpandroid.android.view.ui.EditAddressAndroidView;
+import com.davidcryer.mvpandroid.android.view.ui.TemplateAndroidView;
 
 public interface ViewWrapperRepository {
-    AddressAndroidView.EventsListener bind(final AddressAndroidView view, final Bundle savedState);
-    EditAddressAndroidView.EventsListener bind(final EditAddressAndroidView view, final Bundle savedState);
-    void unbind(final AddressAndroidView view, final boolean isLeaving);
-    void unbind(final EditAddressAndroidView view, final boolean isLeaving);
+    TemplateAndroidView.EventsListener bind(final TemplateAndroidView view, final Bundle savedState);
+    void unbind(final TemplateAndroidView view, final boolean isLeaving);
 }

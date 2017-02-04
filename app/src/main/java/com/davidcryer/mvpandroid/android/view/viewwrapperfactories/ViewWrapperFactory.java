@@ -3,12 +3,9 @@ package com.davidcryer.mvpandroid.android.view.viewwrapperfactories;
 import android.os.Bundle;
 
 import com.davidcryer.mvpandroid.android.view.ViewWrapper;
-import com.davidcryer.mvpandroid.android.view.ui.AddressAndroidView;
-import com.davidcryer.mvpandroid.android.view.ui.EditAddressAndroidView;
+import com.davidcryer.mvpandroid.android.view.ui.TemplateAndroidView;
 
 public interface ViewWrapperFactory {
-    ViewWrapper<AddressAndroidView, AddressAndroidView.EventsListener> createAddressViewWrapper();
-    ViewWrapper<AddressAndroidView, AddressAndroidView.EventsListener> createAddressViewWrapper(final Bundle savedState);
-    ViewWrapper<EditAddressAndroidView, EditAddressAndroidView.EventsListener> createEditAddressViewWrapper();
-    ViewWrapper<EditAddressAndroidView, EditAddressAndroidView.EventsListener> createEditAddressViewWrapper(final Bundle savedState);
+    ViewWrapper<TemplateAndroidView, TemplateAndroidView.EventsListener> createAddressViewWrapper();
+    ViewWrapper<TemplateAndroidView, TemplateAndroidView.EventsListener> createAddressViewWrapper(final Bundle savedState);
 }

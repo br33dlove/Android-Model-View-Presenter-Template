@@ -4,10 +4,10 @@ import android.app.Application;
 
 import com.davidcryer.mvpandroid.android.framework.viewwrapperrepositories.ViewWrapperRepositoryFactory;
 
-public class MvpApplication extends Application implements ViewWrapperRepositoryFactoryProvider {
+public class MvpTemplateApplication extends Application implements ViewWrapperRepositoryFactoryProvider {
     private final ViewWrapperRepositoryFactory viewWrapperRepositoryFactory;
 
-    public MvpApplication() {
+    public MvpTemplateApplication() {
         super();
         viewWrapperRepositoryFactory = ApplicationDependencyProvider.viewWrapperRepositoryFactory();
     }
