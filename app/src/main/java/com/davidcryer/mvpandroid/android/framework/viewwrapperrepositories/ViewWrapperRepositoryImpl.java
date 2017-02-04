@@ -29,13 +29,15 @@ class ViewWrapperRepositoryImpl implements ViewWrapperRepository {
     }
 
     @Override
-    public void unbind(TemplateAndroidView view, boolean isConfigChange) {
-        android.util.Log.v(ViewWrapperRepositoryImpl.class.getSimpleName(), "unbind, isConfigChange: " + (isConfigChange ? "true" : "false"));
+    public void unbind(TemplateAndroidView view, ViewUnbindType unbindType) {
+        android.util.Log.v(ViewWrapperRepositoryImpl.class.getSimpleName(), "unbind, type: " + unbindType.name());
         if (templateViewWrapper != null) {
             templateViewWrapper.unregister();
-            if (!isConfigChange) {
+            if (!unbindType.equals(ViewUnbindType.CONFIG_CHANGE)) {
                 templateViewWrapper.releaseResources();
-                templateViewWrapper = null;
+                if (unbindType.equals(ViewUnbindType.FINISH)) {
+                    templateViewWrapper = null;
+                }
             }
         }
     }

@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.View;
 
 import com.davidcryer.mvpandroid.android.framework.activities.ViewWrapperRepositoryProvider;
+import com.davidcryer.mvpandroid.android.framework.viewwrapperrepositories.ViewUnbindType;
 import com.davidcryer.mvpandroid.android.framework.viewwrapperrepositories.ViewWrapperRepository;
 import com.davidcryer.mvpandroid.android.view.ui.AndroidMvpView;
 import com.davidcryer.mvpandroid.platformindependent.javahelpers.CastHelper;
@@ -17,8 +18,20 @@ abstract class ViewBindingFragment<EventsListenerType extends AndroidMvpView.Eve
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        android.util.Log.d(ViewBindingFragment.class.getSimpleName(), "onViewCreated");
         initialiseViewWrapperRepositoryReference();
         eventsListener = bind(viewWrapperRepository, savedInstanceState);
+    }
+
+
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        if (eventsListener == null) {
+            android.util.Log.d(ViewBindingFragment.class.getSimpleName(), "onStart, events listener is null");
+            eventsListener = bind(viewWrapperRepository, null);
+        }
     }
 
     private void initialiseViewWrapperRepositoryReference() {
@@ -36,10 +49,22 @@ abstract class ViewBindingFragment<EventsListenerType extends AndroidMvpView.Eve
     abstract EventsListenerType bind(final ViewWrapperRepository viewWrapperRepository, final Bundle savedState);
 
     @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        unbind(viewWrapperRepository, getActivity().isChangingConfigurations());
+    public void onStop() {
+        super.onStop();
+        android.util.Log.d(ViewBindingFragment.class.getSimpleName(), "onStop");
+        unbind(viewWrapperRepository, unbindType());
+        eventsListener = null;
     }
 
-    abstract void unbind(final ViewWrapperRepository viewWrapperRepository, final boolean isLeaving);
+    private ViewUnbindType unbindType() {
+        if (getActivity().isChangingConfigurations()) {
+            return ViewUnbindType.CONFIG_CHANGE;
+        }
+        if (getActivity().isFinishing()) {
+            return ViewUnbindType.FINISH;
+        }
+        return ViewUnbindType.NON_CONFIG_CHANGE;
+    }
+
+    abstract void unbind(final ViewWrapperRepository viewWrapperRepository, final ViewUnbindType unbindType);
 }

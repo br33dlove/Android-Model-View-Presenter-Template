@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.davidcryer.mvpandroid.R;
+import com.davidcryer.mvpandroid.android.framework.viewwrapperrepositories.ViewUnbindType;
 import com.davidcryer.mvpandroid.android.framework.viewwrapperrepositories.ViewWrapperRepository;
 import com.davidcryer.mvpandroid.android.view.ui.TemplateAndroidView;
 
@@ -68,9 +69,9 @@ public class TemplateFragment extends ViewBindingFragment<TemplateAndroidView.Ev
     }
 
     @Override
-    protected void unbind(ViewWrapperRepository viewWrapperRepository, boolean isConfigChange) {
-        android.util.Log.v(TemplateFragment.class.getSimpleName(), "unbind, isConfigChange : " + (isConfigChange ? "true" : "false"));
-        viewWrapperRepository.unbind(this, isConfigChange);
+    protected void unbind(ViewWrapperRepository viewWrapperRepository, ViewUnbindType unbindType) {
+        android.util.Log.v(TemplateFragment.class.getSimpleName(), "unbind");
+        viewWrapperRepository.unbind(this, unbindType);
     }
 
     @Override
