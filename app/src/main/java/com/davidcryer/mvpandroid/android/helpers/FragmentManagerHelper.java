@@ -51,4 +51,8 @@ public class FragmentManagerHelper {
         }
         return nonRetainedFragmentCount;
     }
+
+    public static boolean hasFragmentForTag(final FragmentManager fragmentManager, final String fragmentTag) {
+        return fragmentManager.findFragmentByTag(fragmentTag) != null;
+    }
 }

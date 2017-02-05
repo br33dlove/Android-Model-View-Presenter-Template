@@ -1,7 +1,5 @@
 package com.davidcryer.mvpandroid.android.view;
 
-import android.os.Bundle;
-
 import com.davidcryer.mvpandroid.android.view.ui.AndroidMvpView;
 
 public abstract class ViewWrapper<ViewType extends AndroidMvpView, ViewEventsListenerType extends AndroidMvpView.EventsListener> {
@@ -22,7 +20,7 @@ public abstract class ViewWrapper<ViewType extends AndroidMvpView, ViewEventsLis
         this.view = null;
     }
 
-    public abstract void saveInstance(final Bundle outState);
+    public abstract void releaseResources();
 
     public abstract ViewEventsListenerType viewEventsListener();
 }

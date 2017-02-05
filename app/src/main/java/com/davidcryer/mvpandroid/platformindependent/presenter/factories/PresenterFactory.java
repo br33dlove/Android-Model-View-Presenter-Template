@@ -1,10 +1,8 @@
 package com.davidcryer.mvpandroid.platformindependent.presenter.factories;
 
 import com.davidcryer.mvpandroid.platformindependent.presenter.presenters.Presenter;
-import com.davidcryer.mvpandroid.platformindependent.view.AddressView;
-import com.davidcryer.mvpandroid.platformindependent.view.EditAddressView;
+import com.davidcryer.mvpandroid.platformindependent.view.TemplateView;
 
 public interface PresenterFactory {
-    Presenter<AddressView.EventsListener> createAddressPresenter(final AddressView viewWrapper);
-    Presenter<EditAddressView.EventsListener> createEditAddressPresenter(final EditAddressView viewWrapper);
+    Presenter<TemplateView.EventsListener> createAddressPresenter(final TemplateView viewWrapper);
 }

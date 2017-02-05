@@ -5,6 +5,4 @@ import com.davidcryer.mvpandroid.platformindependent.view.MvpView;
 public abstract class Presenter<EventsListenerType extends MvpView.EventsListener> {
 
     public abstract EventsListenerType eventsListener();
-
-    public abstract void releaseResources();
 }
