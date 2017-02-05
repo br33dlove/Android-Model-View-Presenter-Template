@@ -15,7 +15,7 @@ public class TemplateViewWrapper extends ViewWrapper<TemplateAndroidView, Templa
     private final TemplateView.EventsListener wrapperEventsListener;
 
     private TemplateViewWrapper(final PresenterFactory presenterFactory, final TemplateAndroidViewModel viewModel) {
-        wrapperEventsListener = presenterFactory.createAddressPresenter(viewWrapper()).eventsListener();
+        wrapperEventsListener = presenterFactory.createTemplatePresenter(viewWrapper()).eventsListener();
         this.viewModel = viewModel;
     }
 
