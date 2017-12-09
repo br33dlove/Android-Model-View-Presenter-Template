@@ -15,7 +15,7 @@ public class PresenterFactoryImpl implements PresenterFactory {
     }
 
     @Override
-    public Presenter<TemplateView.EventsListener> createAddressPresenter(final TemplateView viewWrapper) {
+    public Presenter<TemplateView.EventsListener> createTemplatePresenter(final TemplateView viewWrapper) {
         return TemplatePresenter.newInstance(viewWrapper);
     }
 }

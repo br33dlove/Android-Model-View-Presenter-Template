@@ -23,8 +23,6 @@ abstract class ViewBindingFragment<EventsListenerType extends AndroidMvpView.Eve
         eventsListener = bind(viewWrapperRepository, savedInstanceState);
     }
 
-
-
     @Override
     public void onStart() {
         super.onStart();

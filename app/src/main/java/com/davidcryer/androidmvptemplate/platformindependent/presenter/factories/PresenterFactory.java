@@ -4,5 +4,5 @@ import com.davidcryer.androidmvptemplate.platformindependent.presenter.presenter
 import com.davidcryer.androidmvptemplate.platformindependent.view.TemplateView;
 
 public interface PresenterFactory {
-    Presenter<TemplateView.EventsListener> createAddressPresenter(final TemplateView viewWrapper);
+    Presenter<TemplateView.EventsListener> createTemplatePresenter(final TemplateView viewWrapper);
 }
